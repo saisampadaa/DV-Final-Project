@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌍 GDP Metrics Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>🌍 GDP Metrics Visualization Dashboard</h1>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Controls -->
+    <section class="card controls-card">
+      <div class="controls">
+        <div class="control-group">
+          <label>Select Metric:</label>
+          <select id="metric-select">
+            <option value="gdp_growth">GDP Growth (%)</option>
+            <option value="gdp_per_capita_growth">GDP Per Capita Growth (%)</option>
+            <option value="gdp_per_capita">GDP Per Capita ($)</option>
+            <option value="combined">Combined Insights</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>Select Country/Region:</label>
+          <select id="country-select"></select>
+        </div>
+
+        <div class="control-group">
+          <label>Select Year:</label>
+          <input type="range" id="year-range" min="1960" max="2020" step="1">
+          <span id="year-value"></span>
+        </div>
+
+        <div class="control-group">
+          <label>Select Chart Type:</label>
+          <select id="chart-type">
+            <option value="line">Line Chart</option>
+            <option value="bar">Bar Chart</option>
+            <option value="scatter">Scatter Plot</option>
+            <option value="pie">Pie Chart</option>
+          </select>
+        </div>
+
+        <button id="update-chart" class="update-btn">Update Chart</button>
+      </div>
+    </section>
+
+    <!-- Dashboard Grid -->
+    <section class="dashboard-grid">
+
+      <!-- Left -->
+      <div class="dashboard-left">
+        <div class="view-buttons">
+          <button class="view-btn active" onclick="showView('chart-view')">📈 Chart View</button>
+          <button class="view-btn" onclick="showView('table-view')">📋 Data Table</button>
+          <button class="view-btn" onclick="showView('map-view')">🗺️ World Map</button>
+        </div>
+
+        <section class="card view-section active" id="chart-view">
+          <canvas id="gdp-chart"></canvas>
+          <div id="comparison-section" style="margin-top: 40px; display:none;">
+            <h2>📊 Comparison Plots</h2>
+            <canvas id="comparison-chart-1"></canvas>
+            <div id="insight-1" class="insight"></div>
+            <canvas id="comparison-chart-2"></canvas>
+            <div id="insight-2" class="insight"></div>
+            <canvas id="comparison-chart-3"></canvas>
+            <div id="insight-3" class="insight"></div>
+          </div>
+        </section>
+
+        <section class="card view-section" id="table-view">
+          <h2>📋 Data Table</h2>
+          <table id="gdp-table">
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </section>
+
+        <section class="card view-section" id="map-view">
+          <svg id="world-map" width="960" height="500"></svg>
+          <div id="map-legend"></div>
+          <div id="tooltip" class="tooltip" style="opacity:0;"></div>
+        </section>
+      </div>
+
+      <!-- Right -->
+      <div class="dashboard-right">
+        <section class="card insights-card" id="insights">
+          <!-- Insights will appear here -->
+        </section>
+
+        <section class="card prediction-card" id="prediction">
+          <button id="predict-btn" class="predict-btn">🔮 Predict Next Year's GDP</button>
+          <div id="prediction-output"></div>
+        </section>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

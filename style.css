@@ -1,0 +1,206 @@
+/* === BASE === */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9fc;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* === LAYOUT === */
+.main-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* === CONTROLS === */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select, input[type="range"] {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.update-btn {
+  padding: 12px 24px;
+  background: #4facfe;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background: #00c3ff;
+}
+
+/* === GRID === */
+.dashboard-grid {
+  display: flex;
+  gap: 30px;
+}
+
+.dashboard-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* === CHART AREA === */
+#gdp-chart {
+  width: 100%;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+#gdp-chart.pie-chart {
+  max-width: 500px;
+  height: auto;
+}
+
+/* === COMPARISON CHARTS === */
+#comparison-section canvas {
+  max-width: 600px;
+  height: 300px;
+  margin: 30px auto;
+  display: block;
+}
+
+/* === TABLE === */
+#gdp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#gdp-table th, #gdp-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#gdp-table th {
+  background: #4facfe;
+  color: white;
+}
+
+/* === MAP === */
+#world-map {
+  width: 100%;
+  height: 500px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* === TOOLTIP === */
+.tooltip {
+  position: absolute;
+  background: white;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  pointer-events: none;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* === INSIGHTS === */
+.insights-card {
+  background: #e3f2fd;
+}
+
+.prediction-card {
+  text-align: center;
+  background: #f1f8e9;
+}
+
+.predict-btn {
+  padding: 10px 20px;
+  background: #66bb6a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.predict-btn:hover {
+  background: #4caf50;
+}
+
+/* === INSIGHT TEXT === */
+.insight {
+  font-style: italic;
+  text-align: center;
+  color: #555;
+  margin: 10px 0 30px 0;
+}
+
+/* === VIEW BUTTONS === */
+.view-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.view-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #d3d3d3;
+  font-weight: 600;
+}
+
+.view-btn.active {
+  background: #4facfe;
+  color: white;
+}
+
+.view-section {
+  display: none;
+}
+
+.view-section.active {
+  display: block;
+}
